@@ -24,7 +24,6 @@ public class TypeService {
 
     public Set<Type> getTypes() {
         return typeRepository.findAll();
-
     }
 
     public Type getType(UUID typeId) {
