@@ -1,9 +1,13 @@
 package de.yfu.intranet.seminars.api.resources.mapper;
 
 import de.yfu.intranet.seminars.api.resources.GoalResource;
+import de.yfu.intranet.seminars.api.resources.RoleResource;
 import de.yfu.intranet.seminars.api.resources.TypeResource;
+import de.yfu.intranet.seminars.api.resources.TypesRolesAssociationResource;
 import de.yfu.intranet.seminars.data.domain.Goal;
+import de.yfu.intranet.seminars.data.domain.Role;
 import de.yfu.intranet.seminars.data.domain.Type;
+import de.yfu.intranet.seminars.data.domain.TypesRolesAssociation;
 import org.mapstruct.Mapper;
 
 import java.util.Set;
@@ -22,5 +26,14 @@ public interface TypeMapper {
 
     Goal mapToGoal(GoalResource goalResource);
     GoalResource mapToResource(Goal goal);
+
+    Role mapToRole(RoleResource roleResource);
+    RoleResource mapToResource(Role role);
+
+    TypesRolesAssociation mapToTypesRolesAssociation(TypesRolesAssociationResource typesRolesAssociationResource);
+    TypesRolesAssociationResource mapToResource(TypesRolesAssociation typesRolesAssociation);
+
+    Set<TypesRolesAssociation> mapToTypesRolesAssociations(Set<TypesRolesAssociationResource> typesRolesAssociationResources);
+    Set<TypesRolesAssociationResource> mapToTypesRolesAssociationResources(Set<TypesRolesAssociation> typesRolesAssociations);
 
 }

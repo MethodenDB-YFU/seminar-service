@@ -3,6 +3,7 @@ package de.yfu.intranet.seminars.api.resources;
 import de.yfu.intranet.seminars.data.domain.Role;
 
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 import java.util.UUID;
 
 public class RoleResource {
@@ -12,7 +13,7 @@ public class RoleResource {
     @NotNull
     private String name;
     private Role.RoleType roleType;
-    //private Set<TypesRolesAssociation> typesRoles;
+    private Set<TypesRolesAssociationResource> typesRoles;
 
     public UUID getId() {
         return id;
@@ -44,5 +45,13 @@ public class RoleResource {
 
     public void setRoleType(Role.RoleType roleType) {
         this.roleType = roleType;
+    }
+
+    public Set<TypesRolesAssociationResource> getTypesRoles() {
+        return typesRoles;
+    }
+
+    public void setTypesRoles(Set<TypesRolesAssociationResource> typesRoles) {
+        this.typesRoles = typesRoles;
     }
 }

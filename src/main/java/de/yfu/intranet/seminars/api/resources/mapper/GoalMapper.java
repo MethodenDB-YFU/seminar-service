@@ -25,4 +25,13 @@ public interface GoalMapper {
 
     Type mapToType(TypeResource typeResource);
     TypeResource mapToResource(Type type);
+
+    Role mapToRole(RoleResource roleResource);
+    RoleResource mapToResource(Role role);
+
+    TypesRolesAssociation mapToTypesRolesAssociation(TypesRolesAssociationResource typesRolesAssociationResource);
+    TypesRolesAssociationResource mapToResource(TypesRolesAssociation typesRolesAssociation);
+
+    Set<TypesRolesAssociation> mapToTypesRolesAssociations(Set<TypesRolesAssociationResource> typesRolesAssociationResources);
+    Set<TypesRolesAssociationResource> mapToTypesRolesAssociationResources(Set<TypesRolesAssociation> typesRolesAssociations);
 }

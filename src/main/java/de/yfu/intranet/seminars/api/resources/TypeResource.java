@@ -17,7 +17,7 @@ public class TypeResource {
     private String category;
     private String remarks;
     private Set<GoalResource> goals;
-    //private Set<TypesRolesAssociationResource> typesRoles;
+    private Set<TypesRolesAssociationResource> typesRoles;
 
     public UUID getId() {
         return id;
@@ -73,6 +73,14 @@ public class TypeResource {
 
     public void setGoals(Set<GoalResource> goals) {
         this.goals = goals;
+    }
+
+    public Set<TypesRolesAssociationResource> getTypesRoles() {
+        return typesRoles;
+    }
+
+    public void setTypesRoles(Set<TypesRolesAssociationResource> typesRoles) {
+        this.typesRoles = typesRoles;
     }
 }
 
