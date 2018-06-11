@@ -22,7 +22,7 @@ public class Role {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "st_id")
+	@Column(name = "sr_id")
 	private UUID id;
 
 	@Column(name = "sr_legacy_id")
@@ -32,9 +32,9 @@ public class Role {
 	@Column(name = "sr_name")
 	private String name;
 
-	@ColumnTransformer(read = "ys_role_types::varchar", write = "?::yfu_seminars.ys_role_types")
+	@ColumnTransformer(read = "sr_role_type::varchar", write = "?::yfu_seminars.ys_role_types")
 	@Enumerated(EnumType.STRING)
-	@Column(name = "ys_role_types")
+	@Column(name = "sr_role_type")
 	private RoleType roleType;
 
 	@OneToMany(mappedBy = "role")
