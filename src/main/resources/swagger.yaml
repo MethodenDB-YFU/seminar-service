@@ -1,0 +1,478 @@
+swagger: '2.0'
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation
+  termsOfService: 'urn:tos'
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0'
+host: '0.0.0.0:8080'
+basePath: /api
+tags:
+  - name: goal-controler
+    description: Goal Controler
+  - name: type-controller
+    description: Type Controller
+  - name: role-controller
+    description: Role Controller
+paths:
+  /seminars/goals:
+    get:
+      tags:
+        - goal-controler
+      summary: getGoal
+      operationId: getGoalUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GoalResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+        - goal-controler
+      summary: createGoal
+      operationId: createGoalUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: goalResource
+          description: goalResource
+          required: true
+          schema:
+            $ref: '#/definitions/GoalResource'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GoalResource'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/seminars/goals/{goalId}':
+    get:
+      tags:
+        - goal-controler
+      summary: getGoal
+      operationId: getGoalUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: goalId
+          in: path
+          description: goalId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GoalResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - goal-controler
+      summary: updateGoal
+      operationId: updateGoalUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: goalId
+          in: path
+          description: goalId
+          required: true
+          type: string
+        - in: body
+          name: goalResource
+          description: goalResource
+          required: true
+          schema:
+            $ref: '#/definitions/GoalResource'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GoalResource'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - goal-controler
+      summary: deleteGoal
+      operationId: deleteGoalUsingDELETE
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: goalId
+          in: path
+          description: goalId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /seminars/roles:
+    get:
+      tags:
+        - role-controller
+      summary: getRole
+      operationId: getRoleUsingGET_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RoleResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+        - role-controller
+      summary: createRole
+      operationId: createRoleUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: roleResource
+          description: roleResource
+          required: true
+          schema:
+            $ref: '#/definitions/RoleResource'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RoleResource'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/seminars/roles/{roleId}':
+    get:
+      tags:
+        - role-controller
+      summary: getRole
+      operationId: getRoleUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: roleId
+          in: path
+          description: roleId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RoleResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - role-controller
+      summary: updateRole
+      operationId: updateRoleUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: roleId
+          in: path
+          description: roleId
+          required: true
+          type: string
+        - in: body
+          name: roleResource
+          description: roleResource
+          required: true
+          schema:
+            $ref: '#/definitions/RoleResource'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RoleResource'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - role-controller
+      summary: deleteRole
+      operationId: deleteRoleUsingDELETE
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: roleId
+          in: path
+          description: roleId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /seminars/types:
+    get:
+      tags:
+        - type-controller
+      summary: getTypes
+      operationId: getTypesUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TypeResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+        - type-controller
+      summary: createType
+      operationId: createTypeUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: typeResource
+          description: typeResource
+          required: true
+          schema:
+            $ref: '#/definitions/TypeResource'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TypeResource'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/seminars/types/{typeId}':
+    get:
+      tags:
+        - type-controller
+      summary: getType
+      operationId: getTypeUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: typeId
+          in: path
+          description: typeId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TypeResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+        - type-controller
+      summary: updateType
+      operationId: updateTypeUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: typeId
+          in: path
+          description: typeId
+          required: true
+          type: string
+        - in: body
+          name: typeResource
+          description: typeResource
+          required: true
+          schema:
+            $ref: '#/definitions/TypeResource'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TypeResource'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+        - type-controller
+      summary: deleteType
+      operationId: deleteTypeUsingDELETE
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: typeId
+          in: path
+          description: typeId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+definitions:
+  GoalResource:
+    type: object
+    properties:
+      explanation:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      type:
+        $ref: '#/definitions/TypeResource'
+  RoleResource:
+    type: object
+    properties:
+      id:
+        type: string
+      legacy_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      role_type:
+        type: string
+        enum:
+          - TEAMER
+          - TEILNEHMER
+  TypeResource:
+    type: object
+    properties:
+      category:
+        type: string
+      goals:
+        type: array
+        items:
+          $ref: '#/definitions/GoalResource'
+      id:
+        type: string
+      legacy_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      remarks:
+        type: string
+      section:
+        type: string

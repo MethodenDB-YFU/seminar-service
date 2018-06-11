@@ -17,7 +17,7 @@ public class TypeResource {
     private String category;
     private String remarks;
     private Set<GoalResource> goals;
-    //private Set<TypesRolesAssociationResource> roles;
+    //private Set<TypesRolesAssociationResource> typesRoles;
 
     public UUID getId() {
         return id;

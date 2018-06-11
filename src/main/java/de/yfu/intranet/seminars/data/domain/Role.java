@@ -38,7 +38,7 @@ public class Role {
 	private RoleType roleType;
 
 	@OneToMany(mappedBy = "role")
-	private Set<TypesRolesAssociation> types;
+	private Set<TypesRolesAssociation> typesRoles;
 
 	public UUID getId() {
 		return id;
@@ -72,11 +72,11 @@ public class Role {
 		this.roleType = roleType;
 	}
 
-	public Set<TypesRolesAssociation> getTypes() {
-		return types;
+	public Set<TypesRolesAssociation> getTypesRoles() {
+		return typesRoles;
 	}
 
-	public void setTypes(Set<TypesRolesAssociation> types) {
-		this.types = types;
+	public void setTypesRoles(Set<TypesRolesAssociation> typesRoles) {
+		this.typesRoles = typesRoles;
 	}
 }

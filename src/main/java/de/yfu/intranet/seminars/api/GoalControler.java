@@ -21,7 +21,6 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 @RequestMapping(value = GOAL_ENDPOINT)
-
 public class GoalControler {
 
     public static final String GOAL_ENDPOINT = "/seminars/goals";

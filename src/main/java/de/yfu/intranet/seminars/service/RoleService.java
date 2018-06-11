@@ -43,6 +43,9 @@ public class RoleService {
         throw new Exception(String.format("No Role found for id [%s]", role.getId()));
     }
 
+    public Set<Role> getRoles() {
+        return roleRepository.findAll();
+    }
 }
 
 
