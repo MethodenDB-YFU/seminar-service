@@ -32,7 +32,7 @@ public class TypesRolesAssociation {
     private boolean mayEditTeam;
 
     @Column(name = "str_may_edit_participants")
-    private boolean MayEditParticipants;
+    private boolean mayEditParticipants;
 
     @Column(name = "str_person_search_type")
     private String personSearchType;
@@ -96,11 +96,11 @@ public class TypesRolesAssociation {
     }
 
     public boolean isMayEditParticipants() {
-        return MayEditParticipants;
+        return mayEditParticipants;
     }
 
     public void setMayEditParticipants(boolean mayEditParticipants) {
-        MayEditParticipants = mayEditParticipants;
+        mayEditParticipants = mayEditParticipants;
     }
 
     public String getPersonSearchType() {
