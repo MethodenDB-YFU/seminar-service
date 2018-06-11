@@ -1,6 +1,11 @@
 package de.yfu.intranet.seminars.data.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonBackReference;
+
 import javax.persistence.*;
+
+import java.util.UUID;
 
 import static de.yfu.intranet.seminars.data.domain.TypesRolesAssociation.SEMINAR_TYPES_ROLES_TABLE;
 
@@ -13,81 +18,85 @@ public class TypesRolesAssociation {
 
     @Id
     @Column(name = "str_type_id")
-    private int typeId;
+    private UUID typeId;
 
     @Id
     @Column(name = "str_role_id")
-    private int roleId;
+    private UUID roleId;
 
     @Column(name = "str_legacy_id")
-    private int legacyId;
+    private Integer legacyId;
 
     @Column(name = "str_unknown_role_id")
-    private int unknownRoleId;
+    private Integer unknownRoleId;
 
     @Column(name = "str_role_expiration_days")
-    private int roleExpirationDays;
+    private Integer roleExpirationDays;
 
     @Column(name = "str_may_edit_team")
-    private boolean mayEditTeam;
+    private Boolean mayEditTeam;
 
     @Column(name = "str_may_edit_participants")
-    private boolean mayEditParticipants;
+    private Boolean mayEditParticipants;
 
     @Column(name = "str_person_search_type")
     private String personSearchType;
 
+    /*
     @ManyToOne
-    @PrimaryKeyJoinColumn(name = "str_role_id", referencedColumnName = "st_id")
+    @JoinColumn(name = "str_role_id", updatable = false, insertable = false, referencedColumnName = "sr_id")
+    @JsonBackReference
     private Role role;
 
-    @ManyToOne
-    @PrimaryKeyJoinColumn(name = "str_type_id", referencedColumnName = "sr_id")
-    private Type type;
 
-    /*
-    public int getTypeId() {
+    @ManyToOne
+    @JoinColumn(name = "str_type_id", updatable = false, insertable = false, referencedColumnName = "st_id")
+    @JsonBackReference
+    private Type type;
+    */
+
+
+    public UUID getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(int typeId) {
+    public void setTypeId(UUID typeId) {
         this.typeId = typeId;
     }
 
-    public int getRoleId() {
+    public UUID getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public void setRoleId(UUID roleId) {
         this.roleId = roleId;
     }
-    */
 
-    public int getLegacyId() {
+    public Integer getLegacyId() {
         return legacyId;
     }
 
-    public void setLegacyId(int legacyId) {
+    public void setLegacyId(Integer legacyId) {
         this.legacyId = legacyId;
     }
 
-    public int getUnknownRoleId() {
+    public Integer getUnknownRoleId() {
         return unknownRoleId;
     }
 
-    public void setUnknownRoleId(int unknownRoleId) {
+    public void setUnknownRoleId(Integer unknownRoleId) {
         this.unknownRoleId = unknownRoleId;
     }
 
-    public int getRoleExpirationDays() {
+    public Integer getRoleExpirationDays() {
         return roleExpirationDays;
     }
 
-    public void setRoleExpirationDays(int roleExpirationDays) {
+    public void setRoleExpirationDays(Integer roleExpirationDays) {
         this.roleExpirationDays = roleExpirationDays;
     }
 
-    public boolean isMayEditTeam() {
+    public Boolean isMayEditTeam() {
         return mayEditTeam;
     }
 
@@ -95,12 +104,12 @@ public class TypesRolesAssociation {
         this.mayEditTeam = mayEditTeam;
     }
 
-    public boolean isMayEditParticipants() {
+    public Boolean isMayEditParticipants() {
         return mayEditParticipants;
     }
 
     public void setMayEditParticipants(boolean mayEditParticipants) {
-        mayEditParticipants = mayEditParticipants;
+        this.mayEditParticipants = mayEditParticipants;
     }
 
     public String getPersonSearchType() {
@@ -111,6 +120,7 @@ public class TypesRolesAssociation {
         this.personSearchType = personSearchType;
     }
 
+    /*
     public Role getRole() {
         return role;
     }
@@ -126,4 +136,5 @@ public class TypesRolesAssociation {
     public void setType(Type type) {
         this.type = type;
     }
+    */
 }

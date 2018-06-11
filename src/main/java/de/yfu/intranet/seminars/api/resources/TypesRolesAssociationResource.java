@@ -1,9 +1,11 @@
 package de.yfu.intranet.seminars.api.resources;
 
+import java.util.UUID;
+
 public class TypesRolesAssociationResource {
 
-    private int typeId;
-    private int roleId;
+    private UUID typeId;
+    private UUID roleId;
     private int legacyId;
     private int unknownRoleId;
     private int roleExpirationDays;
@@ -13,19 +15,19 @@ public class TypesRolesAssociationResource {
     private RoleResource role;
     private TypeResource type;
 
-    public int getTypeId() {
+    public UUID getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(int typeId) {
+    public void setTypeId(UUID typeId) {
         this.typeId = typeId;
     }
 
-    public int getRoleId() {
+    public UUID getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public void setRoleId(UUID roleId) {
         this.roleId = roleId;
     }
 

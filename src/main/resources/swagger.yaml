@@ -456,6 +456,10 @@ definitions:
         enum:
           - TEAMER
           - TEILNEHMER
+      types_roles:
+        type: array
+        items:
+          $ref: '#/definitions/TypesRolesAssociationResource'
   TypeResource:
     type: object
     properties:
@@ -476,3 +480,33 @@ definitions:
         type: string
       section:
         type: string
+      types_roles:
+        type: array
+        items:
+          $ref: '#/definitions/TypesRolesAssociationResource'
+  TypesRolesAssociationResource:
+    type: object
+    properties:
+      legacy_id:
+        type: integer
+        format: int32
+      may_edit_participants:
+        type: boolean
+      may_edit_team:
+        type: boolean
+      person_search_type:
+        type: string
+      role:
+        $ref: '#/definitions/RoleResource'
+      role_expiration_days:
+        type: integer
+        format: int32
+      role_id:
+        type: string
+      type:
+        $ref: '#/definitions/TypeResource'
+      type_id:
+        type: string
+      unknown_role_id:
+        type: integer
+        format: int32

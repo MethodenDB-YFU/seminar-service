@@ -1,5 +1,6 @@
 package de.yfu.intranet.seminars.data.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.ColumnTransformer;
 
 import javax.persistence.*;
@@ -37,7 +38,10 @@ public class Role {
 	@Column(name = "sr_role_type")
 	private RoleType roleType;
 
-	@OneToMany(mappedBy = "role")
+	//@OneToMany(mappedBy = "role")
+	@OneToMany
+	@JoinColumn(name = "str_role_id", referencedColumnName = "sr_id")
+	//@JsonManagedReference
 	private Set<TypesRolesAssociation> typesRoles;
 
 	public UUID getId() {
