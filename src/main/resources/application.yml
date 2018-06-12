@@ -66,3 +66,9 @@ cors:
   - X-User-ID
   maxAge: 3600
   allowCredentials: true
+
+---
+spring:
+  profiles: docker
+  datasource:
+    url: jdbc:postgresql://db:5432/seminars
