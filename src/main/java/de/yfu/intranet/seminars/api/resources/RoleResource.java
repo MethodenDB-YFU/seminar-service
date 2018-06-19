@@ -1,5 +1,7 @@
 package de.yfu.intranet.seminars.api.resources;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import de.yfu.intranet.seminars.data.domain.Role;
 
 import javax.validation.constraints.NotNull;
@@ -13,6 +15,7 @@ public class RoleResource {
     @NotNull
     private String name;
     private Role.RoleType roleType;
+    @JsonManagedReference
     private Set<TypesRolesAssociationResource> typesRoles;
 
     public UUID getId() {

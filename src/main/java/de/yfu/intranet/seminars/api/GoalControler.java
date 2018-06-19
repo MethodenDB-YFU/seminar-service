@@ -18,7 +18,6 @@ import java.util.UUID;
 import static de.yfu.intranet.seminars.api.GoalControler.GOAL_ENDPOINT;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
-
 @RestController
 @RequestMapping(value = GOAL_ENDPOINT)
 public class GoalControler {

@@ -1,5 +1,7 @@
 package de.yfu.intranet.seminars.api.resources;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.UUID;
 
 public class TypesRolesAssociationResource {
@@ -12,7 +14,9 @@ public class TypesRolesAssociationResource {
     private boolean mayEditTeam;
     private boolean mayEditParticipants;
     private String personSearchType;
+    @JsonBackReference
     private RoleResource role;
+    @JsonBackReference
     private TypeResource type;
 
     public UUID getTypeId() {
