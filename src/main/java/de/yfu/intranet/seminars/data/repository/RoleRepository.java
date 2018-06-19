@@ -8,4 +8,5 @@ import java.util.UUID;
 
 public interface RoleRepository extends CrudRepository<Role, UUID> {
     Set<Role> findAll();
+    Role findOneByLegacyId(int legacyRoleId);
 }
