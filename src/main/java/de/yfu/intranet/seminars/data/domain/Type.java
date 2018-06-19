@@ -41,10 +41,9 @@ public class Type {
 	@JsonManagedReference
 	private Set<Goal> goals;
 
-	//@OneToMany(mappedBy = "type")
 	@OneToMany
 	@JoinColumn(name = "str_type_id", referencedColumnName = "st_id")
-	//@JsonManagedReference
+	@JsonManagedReference
 	private Set<TypesRolesAssociation> typesRoles;
 
 

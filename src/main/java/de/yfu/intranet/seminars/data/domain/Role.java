@@ -38,10 +38,9 @@ public class Role {
 	@Column(name = "sr_role_type")
 	private RoleType roleType;
 
-	//@OneToMany(mappedBy = "role")
 	@OneToMany
 	@JoinColumn(name = "str_role_id", referencedColumnName = "sr_id")
-	//@JsonManagedReference
+	@JsonManagedReference
 	private Set<TypesRolesAssociation> typesRoles;
 
 	public UUID getId() {

@@ -42,20 +42,6 @@ public class TypesRolesAssociation {
     @Column(name = "str_person_search_type")
     private String personSearchType;
 
-    /*
-    @ManyToOne
-    @JoinColumn(name = "str_role_id", updatable = false, insertable = false, referencedColumnName = "sr_id")
-    @JsonBackReference
-    private Role role;
-
-
-    @ManyToOne
-    @JoinColumn(name = "str_type_id", updatable = false, insertable = false, referencedColumnName = "st_id")
-    @JsonBackReference
-    private Type type;
-    */
-
-
     public UUID getTypeId() {
         return typeId;
     }
