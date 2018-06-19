@@ -1,6 +1,7 @@
 package de.yfu.intranet.seminars.api.resources;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.validation.constraints.NotNull;
 import java.util.Set;
@@ -17,6 +18,7 @@ public class TypeResource {
     private String category;
     private String remarks;
     private Set<GoalResource> goals;
+    @JsonManagedReference
     private Set<TypesRolesAssociationResource> typesRoles;
 
     public UUID getId() {
