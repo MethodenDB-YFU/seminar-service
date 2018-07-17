@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.6.8
--- Dumped by pg_dump version 9.6.8
+-- Dumped from database version 9.6.6
+-- Dumped by pg_dump version 10.4
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -16,7 +16,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Data for Name: ys_types; Type: TABLE DATA; Schema: yfu_seminars; Owner: yfu_seminars
+-- Data for Name: ys_types; Type: TABLE DATA; Schema: yfu_seminars; Owner: seminars
 --
 
 COPY yfu_seminars.ys_types (st_id, st_legacy_id, st_name, st_section, st_category, st_remarks) FROM stdin;
@@ -121,15 +121,77 @@ f2c89a9e-4158-11e8-842f-0ed5f89f718b	101	Blended Learning	Alumni	Gremien/Vereins
 
 
 --
--- Data for Name: ys_goals; Type: TABLE DATA; Schema: yfu_seminars; Owner: yfu_seminars
+-- Data for Name: ys_goals; Type: TABLE DATA; Schema: yfu_seminars; Owner: seminars
 --
 
-COPY yfu_seminars.ys_goals (sg_id, sg_name, sg_explanation, sg_seminar_type_id) FROM stdin;
+COPY yfu_seminars.ys_goals (sg_id, sg_name, sg_explanation, sg_required, sg_seminar_type_id) FROM stdin;
+9ff4a338-89d5-11e8-9a94-a6cf71072f73	Verständnis von Kulturbegriff entwickeln	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4a608-89d5-11e8-9a94-a6cf71072f73	Sich in der Gruppe kennenlernen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4a75c-89d5-11e8-9a94-a6cf71072f73	Sich verantwortlich fühlen für die Gestaltung des eigenen Lebens	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4a888-89d5-11e8-9a94-a6cf71072f73	Notwendigkeit von Anpassung in Austauschsituation verstehen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4a9b4-89d5-11e8-9a94-a6cf71072f73	Abstrakten Begriff der Anpassung verstehen	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4ace8-89d5-11e8-9a94-a6cf71072f73	Produktive Arbeitsatmosphäre schaffen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4ae46-89d5-11e8-9a94-a6cf71072f73	Bewusstsein über die eigene Art zu kommunizieren schaffen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4af68-89d5-11e8-9a94-a6cf71072f73	Teilen und Relativieren von Befürchtungen und Erwartungen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4b094-89d5-11e8-9a94-a6cf71072f73	Werte als Grundlage des menschlichen Denkens und Handelns begreifen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4b1b6-89d5-11e8-9a94-a6cf71072f73	Verstehen, dass Werte subjektiv, wandelbar und meist unbewusst sind	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4b56c-89d5-11e8-9a94-a6cf71072f73	Möglichkeiten und Herausforderungen von Wertekollisionen verstehen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4b6d4-89d5-11e8-9a94-a6cf71072f73	Reflexion der eigenen Werte	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4b80a-89d5-11e8-9a94-a6cf71072f73	Kausalität von Prägung und Werten verstehen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4b92c-89d5-11e8-9a94-a6cf71072f73	Verstehen, dass es verschiedene gesellschaftliche Grundkonsense gibt, die ein Zusammenleben erleichtern	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4ba4e-89d5-11e8-9a94-a6cf71072f73	Auseinandersetzung mit der eigenen Identität	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4bb70-89d5-11e8-9a94-a6cf71072f73	(Kritisches) Hinterfragen von eigenen Wertvorstellungen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4bec2-89d5-11e8-9a94-a6cf71072f73	Erkennen des Unterschiedes zwischen Selbst- und Fremdwahrnehmung	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4c00c-89d5-11e8-9a94-a6cf71072f73	Auseinandersetzung mit dem Thema Vorurteile	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4c142-89d5-11e8-9a94-a6cf71072f73	Erkennen von Botschafter*innenrolle(n) und der damit einhergehenden Verantwortung	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4c264-89d5-11e8-9a94-a6cf71072f73	Zugehörigkeit zu Gruppen als Identitätsmerkmal verstehen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4c386-89d5-11e8-9a94-a6cf71072f73	Sich selbst als Teil der Identität vieler Gruppen wahrnehmen	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4c7c8-89d5-11e8-9a94-a6cf71072f73	Dynamiken und Eigenschaften von Gruppen bzw. Kulturen erkennen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4c94e-89d5-11e8-9a94-a6cf71072f73	Den Menschen als komplexes Individuum verstehen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4ca7a-89d5-11e8-9a94-a6cf71072f73	Diversitätsbewusstsein über nationale Gruppenzugehörigkeiten hinaus entwickeln	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4cb9c-89d5-11e8-9a94-a6cf71072f73	Begreifen, dass die Gesellschaft als eine Gruppe in besonderem Maße unsere Lebensgestaltung beeinflusst	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4ccbe-89d5-11e8-9a94-a6cf71072f73	Verstehen, dass die Existenz von Gruppen auch immer mit Exklusion und Machtverhältnissen zu tun hat	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4cdea-89d5-11e8-9a94-a6cf71072f73	Konzept der gewaltfreien Kommunikation verstehen	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4d204-89d5-11e8-9a94-a6cf71072f73	Konfliktlösungsstrategien kennenlernen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4d466-89d5-11e8-9a94-a6cf71072f73	Relevanz von Kommunikation & Konfliktlösung in Austauscherfahrung verstehen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4d5a6-89d5-11e8-9a94-a6cf71072f73	Grundzüge von Kommunikationstheorie(n) vermitteln	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4d6c8-89d5-11e8-9a94-a6cf71072f73	Herausforderung von Kommunikation im interkulturellen Kontext erkennen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4d7ea-89d5-11e8-9a94-a6cf71072f73	Eigenes Verhalten in fremder Umgebung erleben und reflektieren	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4d90c-89d5-11e8-9a94-a6cf71072f73	"Eigene Beurteilung von ""Kultur"" hinterfragen"	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4dce0-89d5-11e8-9a94-a6cf71072f73	Methode BIB (beobachten-interpretieren-bewerten) kennenlernen und anwenden	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4de3e-89d5-11e8-9a94-a6cf71072f73	Erleben von Fremdheit	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4df6a-89d5-11e8-9a94-a6cf71072f73	Erkennen der Vor- und Nachteile von Anpassung	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4e08c-89d5-11e8-9a94-a6cf71072f73	Erkennen von absoluten Grenzen von Anpassung	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4e1ae-89d5-11e8-9a94-a6cf71072f73	"Sich mit der Möglichkeit von Stimmungsschwankungen während Austauscherfahrung auseinandersetzen (""Kulturschock"",""Austausch-Burnout"")"	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4e2d0-89d5-11e8-9a94-a6cf71072f73	Eigene Grenzen von Anpassung erkennen und Vermeidungsstrategien erlernen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4e65e-89d5-11e8-9a94-a6cf71072f73	Selbstfürsorge als Werkzeug erkennen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4e7b2-89d5-11e8-9a94-a6cf71072f73	Verdeutlichen, dass YFU TN unterstützt, Grenzen bei Anpassung zu ziehen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4e8de-89d5-11e8-9a94-a6cf71072f73	Vertragsregeln von YFU verdeutlichen und Hintergründe erläutern	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4ea00-89d5-11e8-9a94-a6cf71072f73	Sexuelle Gewalt thematisieren	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4eb22-89d5-11e8-9a94-a6cf71072f73	Möglichkeiten des Schutzes vor sexueller Gewalt aufzeigen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4ec44-89d5-11e8-9a94-a6cf71072f73	Darstellen, warum YFU das Thema Prävention sexueller Gewalt behandelt	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4f090-89d5-11e8-9a94-a6cf71072f73	"Geschichte als Basis einer ""Kultur"" verstehen"	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4f1da-89d5-11e8-9a94-a6cf71072f73	Persönlichen Bezug zu Geschichte verdeutlichen	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4f2fc-89d5-11e8-9a94-a6cf71072f73	Verknüpfung von Geschichte mit anderen Themen der Vorbereitung (Kultur, Gruppen, Verantwortung,.)	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4f428-89d5-11e8-9a94-a6cf71072f73	Auseinandersetzung mit Deutscher Geschichte	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4f54a-89d5-11e8-9a94-a6cf71072f73	Aspekt der Verantwortung aus (Deutscher) Geschichte ziehen	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4f66c-89d5-11e8-9a94-a6cf71072f73	Wert der Eigenverantwortung für die Gesellschaft und für's eigene Leben reflektieren	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4f78e-89d5-11e8-9a94-a6cf71072f73	Verstehen, dass die Gestaltung des Austausches in eigenen Händen liegt	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4fb26-89d5-11e8-9a94-a6cf71072f73	Höheren Zufriedenheitsgrad mit eigenen Entscheidungen ermöglichen	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4fc66-89d5-11e8-9a94-a6cf71072f73	Konzept der Eigenverantwortung auf die Gesellschaft erweitern	\N	t	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4fd88-89d5-11e8-9a94-a6cf71072f73	Wertschätzung von privilegierten Lebensumständen in Deutschland	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4feaa-89d5-11e8-9a94-a6cf71072f73	Kritisches Hinterfragen von Demokratie	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff4ffd6-89d5-11e8-9a94-a6cf71072f73	Beschäftigung mit dem Themenkomplex Demokratie bzw. gesellschaftlicher Verantwortung	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff50102-89d5-11e8-9a94-a6cf71072f73	Motivation für längerfristiges gesellschaftliches Engagement schaffen	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff50508-89d5-11e8-9a94-a6cf71072f73	Zugehörigkeitsgefühl zum Verein schaffen	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff50652-89d5-11e8-9a94-a6cf71072f73	Kritische Auseinandersetzung mit modernen Kommunikationsmitteln	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff50774-89d5-11e8-9a94-a6cf71072f73	Datenschutz thematisieren	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
+9ff50896-89d5-11e8-9a94-a6cf71072f73	Sensibilisierung für Schwierigkeiten einiger TN bei der Finanzierung ihres Austausches	\N	f	f2c7c880-4158-11e8-842f-0ed5f89f718b
 \.
 
 
 --
--- Data for Name: ys_roles; Type: TABLE DATA; Schema: yfu_seminars; Owner: yfu_seminars
+-- Data for Name: ys_roles; Type: TABLE DATA; Schema: yfu_seminars; Owner: seminars
 --
 
 COPY yfu_seminars.ys_roles (sr_id, sr_legacy_id, sr_name, sr_role_type) FROM stdin;
@@ -203,7 +265,7 @@ COPY yfu_seminars.ys_roles (sr_id, sr_legacy_id, sr_name, sr_role_type) FROM std
 
 
 --
--- Data for Name: ys_types_roles; Type: TABLE DATA; Schema: yfu_seminars; Owner: yfu_seminars
+-- Data for Name: ys_types_roles; Type: TABLE DATA; Schema: yfu_seminars; Owner: seminars
 --
 
 COPY yfu_seminars.ys_types_roles (str_id, str_legacy_id, str_type_id, str_role_id, str_unknown_role_id, str_role_expiration_days, str_may_edit_team, str_may_edit_participants, str_person_search_type) FROM stdin;

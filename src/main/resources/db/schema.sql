@@ -17,7 +17,8 @@ CREATE TABLE yfu_seminars.ys_types (
 CREATE TABLE yfu_seminars.ys_goals (
 	sg_id 				UUID 	PRIMARY KEY,
 	sg_name				TEXT	NOT NULL,
-	sg_explanation		TEXT	NOT NULL,
+	sg_explanation		TEXT,
+	sg_required 		BOOLEAN NOT NULL,
 	sg_seminar_type_id	UUID	REFERENCES yfu_seminars.ys_types(st_id)
 );
 
