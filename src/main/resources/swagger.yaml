@@ -22,8 +22,8 @@ paths:
     get:
       tags:
         - goal-controler
-      summary: getGoal
-      operationId: getGoalUsingGET_1
+      summary: getGoals
+      operationId: getGoalsUsingGET
       consumes:
         - application/json
       produces:
@@ -159,8 +159,8 @@ paths:
     get:
       tags:
         - role-controller
-      summary: getRole
-      operationId: getRoleUsingGET_1
+      summary: getRoles
+      operationId: getRolesUsingGET
       consumes:
         - application/json
       produces:
