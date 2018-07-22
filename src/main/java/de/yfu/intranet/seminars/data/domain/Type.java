@@ -1,6 +1,6 @@
 package de.yfu.intranet.seminars.data.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -37,15 +37,13 @@ public class Type {
 	@Column(name = "st_remarks")
 	private String remarks;
 
-	@OneToMany(mappedBy = "type", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "type")
 	@JsonManagedReference
 	private Set<Goal> goals;
 
-	@OneToMany
-	@JoinColumn(name = "str_type_id", referencedColumnName = "st_id")
+	@OneToMany(mappedBy = "type", fetch = FetchType.LAZY)
 	@JsonManagedReference
 	private Set<TypesRolesAssociation> typesRoles;
-
 
 	public UUID getId() {
 		return id;
@@ -103,7 +101,7 @@ public class Type {
 		this.goals = goals;
 	}
 
-	public Set<TypesRolesAssociation> getTypesRoles() {
+ 	public Set<TypesRolesAssociation> getTypesRoles() {
 		return typesRoles;
 	}
 

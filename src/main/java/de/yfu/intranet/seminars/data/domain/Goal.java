@@ -1,6 +1,8 @@
 package de.yfu.intranet.seminars.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -27,6 +29,10 @@ public class Goal {
 	@NotNull
 	@Column(name = "sg_explanation")
 	private String explanation;
+
+	@NotNull
+	@Column(name = "sg_required")
+	private Boolean required;
 
 	@ManyToOne
 	@JoinColumn(name = "sg_seminar_type_id")
@@ -55,6 +61,14 @@ public class Goal {
 
 	public void setExplanation(String explanation) {
 		this.explanation = explanation;
+	}
+
+	public Boolean getRequired() {
+		return required;
+	}
+
+	public void setRequired(Boolean required) {
+		this.required = required;
 	}
 
 	public Type getType() {

@@ -38,8 +38,7 @@ public class Role {
 	@Column(name = "sr_role_type")
 	private RoleType roleType;
 
-	@OneToMany
-	@JoinColumn(name = "str_role_id", referencedColumnName = "sr_id")
+	@OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
 	@JsonManagedReference
 	private Set<TypesRolesAssociation> typesRoles;
 

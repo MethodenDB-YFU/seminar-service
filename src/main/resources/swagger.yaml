@@ -11,10 +11,14 @@ info:
 host: '0.0.0.0:8080'
 basePath: /api
 tags:
+  - name: legacy-role-controller
+    description: Legacy Role Controller
   - name: goal-controler
     description: Goal Controler
   - name: type-controller
     description: Type Controller
+  - name: legacy-type-controller
+    description: Legacy Type Controller
   - name: role-controller
     description: Role Controller
 paths:
@@ -155,6 +159,62 @@ paths:
           description: Unauthorized
         '403':
           description: Forbidden
+  '/seminars/legacy/roles/{legacyRoleId}':
+    get:
+      tags:
+        - legacy-role-controller
+      summary: getRoleByLegacyId
+      operationId: getRoleByLegacyIdUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: legacyRoleId
+          in: path
+          description: legacyRoleId
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RoleResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  '/seminars/legacy/types/{legacyTypeId}':
+    get:
+      tags:
+        - legacy-type-controller
+      summary: getTypeByLegacyId
+      operationId: getTypeByLegacyIdUsingGET
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: legacyTypeId
+          in: path
+          description: legacyTypeId
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TypeResource'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
   /seminars/roles:
     get:
       tags:
@@ -439,6 +499,8 @@ definitions:
         type: string
       name:
         type: string
+      required:
+        type: boolean
       type:
         $ref: '#/definitions/TypeResource'
   RoleResource:

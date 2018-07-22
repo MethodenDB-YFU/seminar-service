@@ -1,7 +1,6 @@
 package de.yfu.intranet.seminars.data.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 
@@ -41,6 +40,16 @@ public class TypesRolesAssociation {
 
     @Column(name = "str_person_search_type")
     private String personSearchType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "str_type_id", insertable = false, updatable = false)
+    @JsonBackReference
+    private Type type;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "str_role_id", insertable = false, updatable = false)
+    @JsonBackReference
+    private Role role;
 
     public UUID getTypeId() {
         return typeId;
@@ -106,7 +115,6 @@ public class TypesRolesAssociation {
         this.personSearchType = personSearchType;
     }
 
-    /*
     public Role getRole() {
         return role;
     }
@@ -122,5 +130,4 @@ public class TypesRolesAssociation {
     public void setType(Type type) {
         this.type = type;
     }
-    */
 }
