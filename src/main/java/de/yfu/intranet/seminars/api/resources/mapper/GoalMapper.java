@@ -19,7 +19,6 @@ import java.util.UUID;
 public interface GoalMapper {
 
     Goal mapToGoal(GoalResource goalResource);
-//    @Mapping( target = "type", ignore = true)
     GoalResource mapToResource(Goal goal);
 
     Set<Goal> mapToGoals(Set<GoalResource> goalResources);
