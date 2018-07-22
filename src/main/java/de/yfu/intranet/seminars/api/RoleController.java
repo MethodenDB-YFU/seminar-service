@@ -52,7 +52,7 @@ public class RoleController {
             method = GET,
             produces = ROLE_CONTENT
     )
-    public ResponseEntity<Set<RoleResource>> getRole() {
+    public ResponseEntity<Set<RoleResource>> getRoles() {
         return new ResponseEntity<>(roleMapper.mapToRoleResources(roleService.getRoles()), HttpStatus.OK);
     }
 

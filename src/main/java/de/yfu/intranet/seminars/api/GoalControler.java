@@ -52,7 +52,7 @@ public class GoalControler {
             method = GET,
             produces = GOAL_CONTENT
     )
-    public ResponseEntity<Set<GoalResource>> getGoal() {
+    public ResponseEntity<Set<GoalResource>> getGoals() {
         return new ResponseEntity<>(goalMapper.mapToGoalResources(goalService.getGoals()), HttpStatus.OK);
     }
 
