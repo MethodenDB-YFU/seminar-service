@@ -9,6 +9,8 @@ import de.yfu.intranet.seminars.data.domain.Role;
 import de.yfu.intranet.seminars.data.domain.Type;
 import de.yfu.intranet.seminars.data.domain.TypesRolesAssociation;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 
 import java.util.Set;
 
@@ -16,6 +18,7 @@ import java.util.Set;
 public interface TypeMapper {
 
     Type mapToType(TypeResource typeResource);
+
     TypeResource mapToResource(Type type);
 
     Set<Type> mapToTypes(Set<TypeResource> typeResources);
@@ -25,12 +28,15 @@ public interface TypeMapper {
     Set<GoalResource> mapToGoalResources(Set<Goal> goals);
 
     Goal mapToGoal(GoalResource goalResource);
+    @Mapping(target = "type", ignore = true)
     GoalResource mapToResource(Goal goal);
 
     Role mapToRole(RoleResource roleResource);
+    @Mapping(target = "typesRoles", ignore = true)
     RoleResource mapToResource(Role role);
 
     TypesRolesAssociation mapToTypesRolesAssociation(TypesRolesAssociationResource typesRolesAssociationResource);
+    @Mapping(target = "type", ignore = true)
     TypesRolesAssociationResource mapToResource(TypesRolesAssociation typesRolesAssociation);
 
     Set<TypesRolesAssociation> mapToTypesRolesAssociations(Set<TypesRolesAssociationResource> typesRolesAssociationResources);

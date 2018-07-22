@@ -1,13 +1,14 @@
 package de.yfu.intranet.seminars.api.resources;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import de.yfu.intranet.seminars.data.domain.Role;
 
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 import java.util.UUID;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RoleResource {
 
     private UUID id;
@@ -15,7 +16,7 @@ public class RoleResource {
     @NotNull
     private String name;
     private Role.RoleType roleType;
-    @JsonManagedReference
+    @JsonManagedReference(value = "role-typesRoles")
     private Set<TypesRolesAssociationResource> typesRoles;
 
     public UUID getId() {

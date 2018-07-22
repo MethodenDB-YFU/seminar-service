@@ -17,8 +17,9 @@ public class TypeResource {
     private String section;
     private String category;
     private String remarks;
+    @JsonManagedReference(value = "type-goals")
     private Set<GoalResource> goals;
-    @JsonManagedReference
+    @JsonManagedReference(value = "type-typesRoles")
     private Set<TypesRolesAssociationResource> typesRoles;
 
     public UUID getId() {

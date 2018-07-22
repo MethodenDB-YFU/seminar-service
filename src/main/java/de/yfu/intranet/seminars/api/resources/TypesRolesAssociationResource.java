@@ -14,9 +14,9 @@ public class TypesRolesAssociationResource {
     private boolean mayEditTeam;
     private boolean mayEditParticipants;
     private String personSearchType;
-    @JsonBackReference
+    @JsonBackReference(value = "role-typesRoles")
     private RoleResource role;
-    @JsonBackReference
+    @JsonBackReference(value = "type-typesRoles")
     private TypeResource type;
 
     public UUID getTypeId() {
