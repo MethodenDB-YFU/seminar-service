@@ -10,5 +10,7 @@ import java.util.UUID;
 @Repository
 public interface TypeRepository extends CrudRepository<Type, UUID> {
     Set<Type> findAll();
+    Type findOne(UUID typeId);
+    void delete(UUID typeId);
     Type findOneByLegacyId(int legacyTypeId);
 }

@@ -10,4 +10,6 @@ import java.util.UUID;
 @Repository
 public interface GoalRepository extends CrudRepository<Goal, UUID> {
     Set<Goal> findAll();
+    void delete(UUID goalId);
+    Goal findOne(UUID goalId);
 }
