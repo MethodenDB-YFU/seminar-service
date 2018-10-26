@@ -28,15 +28,18 @@ public class RoleService {
     }
 
     public Role getRole(UUID roleId) {
-        return roleRepository.findOne(roleId);
+        return roleRepository.findById(roleId).orElse(null);
     }
 
     public void delete(UUID roleId) {
-        roleRepository.delete(roleId);
+        final Role existing = roleRepository.findById(roleId).orElse(null);
+        if(existing != null) {
+            roleRepository.delete(existing);
+        }
     }
 
     public Role update(Role role) throws Exception {
-        Role existing = roleRepository.findOne(role.getId());
+        Role existing = roleRepository.findById(role.getId()).orElse(null);
         if(existing != null) {
             return roleRepository.save(role);
         }
