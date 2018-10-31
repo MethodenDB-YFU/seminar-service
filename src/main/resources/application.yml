@@ -39,6 +39,7 @@ azure:
     client-id: 7c2eb271-b1d9-43a4-9b34-1261bdce9cea
     active-directory-groups: Seminars
 
+
 server:
   port: 8080
   servlet:

@@ -26,11 +26,11 @@ public class GoalService {
     }
 
     public Goal getGoal(UUID goalId) {
-        return this.goalRepository.findOne(goalId);
+        return this.goalRepository.findById(goalId).orElse(null);
     }
 
     public Goal update(Goal goal) throws Exception {
-        Goal existing = goalRepository.findOne(goal.getId());
+        Goal existing = goalRepository.findById(goal.getId()).orElse(null);
         if(existing != null) {
             return goalRepository.save(goal);
         }
@@ -38,6 +38,9 @@ public class GoalService {
     }
 
     public void delete(UUID goalId) {
-        goalRepository.delete(goalId);
+        final Goal existing = goalRepository.findById(goalId).orElse(null);
+        if (existing != null) {
+            goalRepository.delete(existing);
+        }
     }
 }
