@@ -33,21 +33,21 @@ spring:
       sort-properties-alphabetically: true
       default-view-inclusion: false
 
-security:
-  user:
-    password: password
+azure:
+  activedirectory:
+    client-secret: Sa3gzI2aeKxFqdqfLbhxNVmvtLy4RESBBZFMSXV0Kpo=
+    client-id: 7c2eb271-b1d9-43a4-9b34-1261bdce9cea
+    active-directory-groups: Seminars
 
 server:
-  contextPath: /api
+  port: 8080
+  servlet:
+    contextPath: /api
 
 cors:
   allowedOrigins:
-  - "http://localhost"
   - "http://localhost:8080"
-  - "localhost:8080"
-  - "localhost:8081"
-  - "localhost"
-  - "http://localhost:8081"
+  - "https://methodendb.yfu.alexmsenger.de"
   allowedMethods:
   - GET
   - POST
@@ -59,11 +59,9 @@ cors:
   - Authorization
   - Content-Type
   - X-Flow-ID
-  - X-User-ID
   - Accept
   exposedHeaders:
   - X-Flow-ID
-  - X-User-ID
   maxAge: 3600
   allowCredentials: true
 

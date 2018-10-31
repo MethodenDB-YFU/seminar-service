@@ -1,7 +1,5 @@
-# docker build -t yfudeutschland/seminar-service-db -f db.Dockerfile .
-
- docker run -d \
- 	--name seminar-service-db-0.0.1 \
+docker run -d \
+ 	--name seminar_service_db \
  	--net=seminars \
  	--net-alias=db \
  	--rm \
