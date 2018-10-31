@@ -35,9 +35,10 @@ spring:
 
 azure:
   activedirectory:
-    client-secret: t8lFHodtiXdZMU0p4P0SpkLVIEfhg8bkt35DLihC3DQ=
-    client-id: d08628b7-a0cd-4679-bdd7-f12d92f3cb0f
-    active-directory-groups: Editors,EDITOR
+    client-secret: Sa3gzI2aeKxFqdqfLbhxNVmvtLy4RESBBZFMSXV0Kpo=
+    client-id: 7c2eb271-b1d9-43a4-9b34-1261bdce9cea
+    active-directory-groups: Seminars
+
 
 server:
   port: 8080
@@ -46,12 +47,8 @@ server:
 
 cors:
   allowedOrigins:
-  - "http://localhost"
   - "http://localhost:8080"
-  - "localhost:8080"
-  - "localhost:8081"
-  - "localhost"
-  - "http://localhost:8081"
+  - "https://methodendb.yfu.alexmsenger.de"
   allowedMethods:
   - GET
   - POST
@@ -63,11 +60,9 @@ cors:
   - Authorization
   - Content-Type
   - X-Flow-ID
-  - X-User-ID
   - Accept
   exposedHeaders:
   - X-Flow-ID
-  - X-User-ID
   maxAge: 3600
   allowCredentials: true
 
