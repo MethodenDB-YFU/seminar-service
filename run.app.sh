@@ -1,8 +1,8 @@
 #!/bin/bash
 
-docker build --cache-from yfudeutschland/backend-build-cache -t yfudeutschland/seminar-service .
+docker build --cache-from yfudeutschland/seminar-service-build-cache -t yfudeutschland/seminar-service .
 
-docker run -it \
+docker run -d \
     --name seminar_service \
     --net-alias=app \
     --net=seminars \
