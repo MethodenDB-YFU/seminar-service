@@ -1,0 +1,6 @@
+.idea/
+.git/
+target/
+*.md
+*.iml
+run.*.sh

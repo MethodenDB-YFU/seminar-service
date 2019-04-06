@@ -7,4 +7,4 @@ docker run -d \
 	-e POSTGRES_USER=seminars \
 	-e POSTGRES_PASSWORD=seminars \
  	-v `pwd`/src/main/resources/db/:/docker-entrypoint-initdb.d/ \
- 	postgres:9.6
+ 	postgres:10-alpine
